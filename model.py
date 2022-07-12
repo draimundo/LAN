@@ -6,8 +6,8 @@ import tensorflow as tf
 import numpy as np
 
 def lan_g(input_image):
-    activation='relu'
-    end_activation='sigmoid'
+    activation='lrelu'
+    end_activation='tanh'
     with tf.compat.v1.variable_scope("generator"):
         x_a = _conv_layer(input_image, 16, 4, 2, activation=activation) # flat-> layers
         x_b = _downscale(x_a, 16, 3, 2, 'stride', norm='none', sn=False, activation=activation) # downscale
